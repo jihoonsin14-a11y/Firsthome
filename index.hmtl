@@ -3,164 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스테이크 맛집 평가</title>
+    <title>NEON BEAT - 당신의 취향을 저격할 음악</title>
     <style>
-        /* 기본 스타일 */
+        /* CSS 스타일링 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
             margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
         }
 
-        /* 헤더 스타일 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1rem 0;
             text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header h1 {
+            font-size: 4em;
             margin: 0;
-            font-size: 2.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
-        /* 메인 콘텐츠 컨테이너 */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 2rem auto;
+        .music-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        /* 스테이크 카드 스타일 */
-        .steak-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .music-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.2s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
         }
 
-        .steak-card:hover {
-            transform: translateY(-10px);
+        .music-card:hover {
+            transform: scale(1.05);
         }
 
-        .steak-card img {
+        .music-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
-        .steak-card-content {
-            padding: 1.5rem;
+        .music-info {
+            padding: 20px;
         }
 
-        .steak-card-content h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
+        .music-info h3 {
+            margin: 0 0 10px 0;
+            color: #ff00ff;
         }
 
-        .steak-card-content p {
-            font-size: 1rem;
-            line-height: 1.6;
+        .music-info p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ccc;
         }
 
-        /* 별점 스타일 */
-        .star-rating {
-            font-size: 1.8rem;
-            color: #f1c40f;
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
 
-        .star-rating .star-inactive {
-            color: #bdc3c7;
-        }
-
-        /* 푸터 스타일 */
         footer {
             text-align: center;
-            padding: 1rem 0;
-            background-color: #34495e;
-            color: #ecf0f1;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: #222;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>나의 스테이크 다이어리</h1>
+        <h1>NEON BEAT</h1>
+        <p>당신의 플레이리스트를 화려하게 채워줄 음악들</p>
     </header>
 
-    <main class="container">
-        <article class="steak-card">
-            <img src="https://img.freepik.com/free-photo/juicy-grilled-steak-with-fries-and-salad-on-a-plate_123827-23425.jpg?t=st=1716533089~exp=1716536689~hmac=e2e3e57f8d689196b27b8893d56a2a514d7c66d1f05928d3e9c15d730a9e7f8e&w=996" alt="립아이 스테이크">
-            <div class="steak-card-content">
-                <h2>울프강 스테이크하우스 - 립아이 스테이크</h2>
-                <div class="star-rating">
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-inactive">★</span>
-                </div>
-                <p>육즙이 풍부하고 부드러운 식감이 일품. 완벽한 굽기 정도와 풍미 깊은 시즈닝이 인상적이었다.</p>
-            </div>
-        </article>
+    <div class="container">
 
-        <article class="steak-card">
-            <img src="https://img.freepik.com/free-photo/grilled-beef-steak-with-rosemary-and-sauce-on-a-wooden-board_123827-23004.jpg?t=st=1716533140~exp=1716536740~hmac=341764663a8a2a8b3e83921501d5d1c25a072c4d9f67a6d887a0207865c3c12a&w=996" alt="안심 스테이크">
-            <div class="steak-card-content">
-                <h2>BLT 스테이크 - 안심 스테이크</h2>
-                <div class="star-rating">
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
+        <h2 class="section-title">금주의 TOP 10</h2>
+        <div class="music-grid">
+            <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMjRfMjUg%2FMDAxNzAwNzg4NDI5NjMx.iS48j22v2p4k23sH9f8kTm_AcGJwNY3z_Lq3-kGqJDAg.D26w6Wq2H3LwZwhL_p2cE7kO7Fvo_l2a71k_sQcO2rkg.JPEG.daria_h%2FIMG_2627.JPG&type=sc960_832" alt="앨범 커버">
+                <div class="music-info">
+                    <h3>Supernova</h3>
+                    <p>aespa</p>
                 </div>
-                <p>입에서 녹는다는 표현이 정확하다. 최고의 부드러움을 경험할 수 있었고, 함께 나온 소스와의 조화도 훌륭했다.</p>
             </div>
-        </article>
+             <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMjlfMjQg%2FMDAxNzExNjg0MzI3MzI3.-Uo4X33q5rB2xXV6UoWf4fR87n05g9Zz_b_u_WapYfgg.D5_Ww9-uX0zG1t-B3dGqK92vBwV_b8-0F_aY3g-8f9sg.JPEG.hyunsunny0127%2FIMG_5866.JPG&type=sc960_832" alt="앨범 커버">
+                <div class="music-info">
+                    <h3>Magnetic</h3>
+                    <p>ILLIT</p>
+                </div>
+            </div>
+             <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA0MTlfMjky%2FMDAxNzEzNDU4MjYxNDAy.J_f27wE0_25P-K7nSg3f6mY8Z5a8Z6e8a8e8b8a8b8b.k.JPEG.daria_h%2FIMG_2627.JPG&type=sc960_832" alt="앨범 커버">
+                <div class="music-info">
+                    <h3>SHEESH</h3>
+                    <p>BABYMONSTER</p>
+                </div>
+            </div>
+        </div>
 
-        <article class="steak-card">
-            <img src="https://img.freepik.com/free-photo/a-grilled-steak-with-a-side-of-french-fries-and-a-salad_1340-23439.jpg?t=st=1716533169~exp=1716536769~hmac=62174301d0c4768393e877a561f52d2f7041a7d656911c0f16e453664d6932a3&w=996" alt="채끝 스테이크">
-            <div class="steak-card-content">
-                <h2>더 스테이크 하우스 - 채끝 스테이크</h2>
-                <div class="star-rating">
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-inactive">★</span>
+        <h2 class="section-title">장르별 추천</h2>
+        <div class="music-grid">
+            <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMjVfMjcy%2FMDAxNzAzNDMxNTYwNjY4.3z2z3j2c2o5e5g5k5f5f5e5f5e5g.k.JPEG.daria_h%2FIMG_2627.JPG&type=sc960_832" alt="K-POP">
+                <div class="music-info">
+                    <h3>K-POP</h3>
+                    <p>NMIXX - Blue Valentine</p>
                 </div>
-                <p>씹는 맛이 살아있는 채끝살의 매력을 느낄 수 있었다. 고소한 풍미가 입안 가득 퍼지는 경험.</p>
             </div>
-        </article>
-
-        <article class="steak-card">
-            <img src="https://img.freepik.com/free-photo/delicious-grilled-steak-with-fresh-vegetables-and-sauce_123827-23429.jpg?t=st=1716533202~exp=1716536802~hmac=40f807218683e387140f805a963428d05a4175317f2e153e34b121a9103c8c22&w=996" alt="티본 스테이크">
-            <div class="steak-card-content">
-                <h2>구 스테이크 733 - 티본 스테이크</h2>
-                <div class="star-rating">
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-active">★</span>
-                    <span class="star-inactive">★</span>
-                    <span class="star-inactive">★</span>
+            <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzExMjRfMjUg%2FMDAxNzAwNzg4NDI5NjMx.iS48j22v2p4k23sH9f8kTm_AcGJwNY3z_Lq3-kGqJDAg.D26w6Wq2H3LwZwhL_p2cE7kO7Fvo_l2a71k_sQcO2rkg.JPEG.daria_h%2FIMG_2627.JPG&type=sc960_832" alt="Pop">
+                <div class="music-info">
+                    <h3>Pop</h3>
+                    <p>Ariana Grande - we can't be friends</p>
                 </div>
-                <p>안심과 등심을 한번에 즐길 수 있어 좋았지만, 이날은 굽기가 다소 아쉬웠다. 양은 푸짐했다.</p>
             </div>
-        </article>
-    </main>
+            <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMjVfMjcy%2FMDAxNzAzNDMxNTYwNjY4.3z2z3j2c2o5e5g5k5f5f5e5f5e5g.k.JPEG.daria_h%2FIMG_2627.JPG&type=sc960_832" alt="클래식">
+                <div class="music-info">
+                    <h3>클래식</h3>
+                    <p>비발디 - 사계 중 '겨울' 2악장</p>
+                </div>
+            </div>
+            <div class="music-card">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMjlfMjQg%2FMDAxNzExNjg0MzI3MzI3.-Uo4X33q5rB2xXV6UoWf4fR87n05g9Zz_b_u_WapYfgg.D5_Ww9-uX0zG1t-B3dGqK92vBwV_b8-0F_aY3g-8f9sg.JPEG.hyunsunny0127%2FIMG_5866.JPG&type=sc960_832" alt="영화음악">
+                <div class="music-info">
+                    <h3>영화음악</h3>
+                    <p>라라랜드 OST - City of Stars</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 나의 스테이크 다이어리. All rights reserved.</p>
+        <p>&copy; 2025 NEON BEAT. All Rights Reserved.</p>
     </footer>
 
 </body>
