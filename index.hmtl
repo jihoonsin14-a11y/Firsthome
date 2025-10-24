@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스테이크 맛집 평가</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* 메인 콘텐츠 컨테이너 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 스테이크 카드 스타일 */
+        .steak-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .steak-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .steak-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .steak-card-content {
+            padding: 1.5rem;
+        }
+
+        .steak-card-content h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .steak-card-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 별점 스타일 */
+        .star-rating {
+            font-size: 1.8rem;
+            color: #f1c40f;
+        }
+
+        .star-rating .star-inactive {
+            color: #bdc3c7;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #34495e;
+            color: #ecf0f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>나의 스테이크 다이어리</h1>
+    </header>
+
+    <main class="container">
+        <article class="steak-card">
+            <img src="https://img.freepik.com/free-photo/juicy-grilled-steak-with-fries-and-salad-on-a-plate_123827-23425.jpg?t=st=1716533089~exp=1716536689~hmac=e2e3e57f8d689196b27b8893d56a2a514d7c66d1f05928d3e9c15d730a9e7f8e&w=996" alt="립아이 스테이크">
+            <div class="steak-card-content">
+                <h2>울프강 스테이크하우스 - 립아이 스테이크</h2>
+                <div class="star-rating">
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-inactive">★</span>
+                </div>
+                <p>육즙이 풍부하고 부드러운 식감이 일품. 완벽한 굽기 정도와 풍미 깊은 시즈닝이 인상적이었다.</p>
+            </div>
+        </article>
+
+        <article class="steak-card">
+            <img src="https://img.freepik.com/free-photo/grilled-beef-steak-with-rosemary-and-sauce-on-a-wooden-board_123827-23004.jpg?t=st=1716533140~exp=1716536740~hmac=341764663a8a2a8b3e83921501d5d1c25a072c4d9f67a6d887a0207865c3c12a&w=996" alt="안심 스테이크">
+            <div class="steak-card-content">
+                <h2>BLT 스테이크 - 안심 스테이크</h2>
+                <div class="star-rating">
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                </div>
+                <p>입에서 녹는다는 표현이 정확하다. 최고의 부드러움을 경험할 수 있었고, 함께 나온 소스와의 조화도 훌륭했다.</p>
+            </div>
+        </article>
+
+        <article class="steak-card">
+            <img src="https://img.freepik.com/free-photo/a-grilled-steak-with-a-side-of-french-fries-and-a-salad_1340-23439.jpg?t=st=1716533169~exp=1716536769~hmac=62174301d0c4768393e877a561f52d2f7041a7d656911c0f16e453664d6932a3&w=996" alt="채끝 스테이크">
+            <div class="steak-card-content">
+                <h2>더 스테이크 하우스 - 채끝 스테이크</h2>
+                <div class="star-rating">
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-inactive">★</span>
+                </div>
+                <p>씹는 맛이 살아있는 채끝살의 매력을 느낄 수 있었다. 고소한 풍미가 입안 가득 퍼지는 경험.</p>
+            </div>
+        </article>
+
+        <article class="steak-card">
+            <img src="https://img.freepik.com/free-photo/delicious-grilled-steak-with-fresh-vegetables-and-sauce_123827-23429.jpg?t=st=1716533202~exp=1716536802~hmac=40f807218683e387140f805a963428d05a4175317f2e153e34b121a9103c8c22&w=996" alt="티본 스테이크">
+            <div class="steak-card-content">
+                <h2>구 스테이크 733 - 티본 스테이크</h2>
+                <div class="star-rating">
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-active">★</span>
+                    <span class="star-inactive">★</span>
+                    <span class="star-inactive">★</span>
+                </div>
+                <p>안심과 등심을 한번에 즐길 수 있어 좋았지만, 이날은 굽기가 다소 아쉬웠다. 양은 푸짐했다.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 나의 스테이크 다이어리. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
