@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스테이크 맛집 평가</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-color: #212529;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* 메인 콘텐츠 컨테이너 */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 스테이크 카드 스타일 */
+        .steak-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .steak-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .steak-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .steak-card-content {
+            padding: 1.5rem;
+        }
+
+        .steak-card-content h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #495057;
+        }
+
+        .steak-card-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #6c757d;
+        }
+
+        /* 별점 스타일 */
+        .star-rating {
+            font-size: 1.8rem;
+            color: #f1c40f;
+        }
+
+        .star-rating .star-inactive {
+            color: #dee2e6;
+        }
+        
+        /* 푸터 스타일 */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #343a40;
+            color: #f8f9fa;
+            margin-top: 2rem;
+        }
+
+        /* 모달 스타일 */
+        .modal {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.5s;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .close-button {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+        }
+        
+        .modal-body p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .restaurant-info {
+            background-color: #f1f3f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>나의 스테이크 다이어리</h1>
+    </header>
+
+    <main class="container">
+        <!-- 스테이크 카드 1 -->
+        <article class="steak-card" onclick="openModal('modal1')">
+            <img src="https://images.unsplash.com/photo-1546964124-6cce460f3854?q=80&w=1770&auto=format&fit=crop" alt="립아이 스테이크">
+            <div class="steak-card-content">
+                <h2>울프강 스테이크하우스 - 립아이 스테이크</h2>
+                <div class="star-rating">
+                    <span class="star-active">★</span><span class="star-active">★</span><span class="star-active">★</span><span class="star-active">★</span><span class="star-inactive">★</span>
+                </div>
+                <p>육즙이 풍부하고 부드러운 식감이 일품. 완벽한 굽기 정도와 풍미 깊은 시즈닝이 인상적이었다.</p>
+            </div>
+        </article>
+
+        <!-- 스테이크 카드 2 -->
+        <article class="steak-card" onclick="openModal('modal2')">
+            <img src="https://images.unsplash.com/photo-1629508358239-1b54c1b18340?q=80&w=1770&auto=forma
